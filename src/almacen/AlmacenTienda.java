@@ -44,10 +44,13 @@ public class AlmacenTienda {
         System.out.println("Orden: comprar " + control.getUnidadesAPedir() + " unidades al proveedor (Pedidos está "
                 + hPedidos.getState() + ")");
 
-        // se crea un objeto comproa con la clase CompraProveedor, para luego instanciarse un hilo con esta
+        /* 
+         * se crea un objeto compra con la clase CompraProveedor, para luego instanciarse un hilo con esta
+         * para darle el resultado de las unidades a pedir obtenidas por el hilo
+         */
         CompraProveedor compra = new CompraProveedor(control.getUnidadesAPedir());
         Thread hCompra = new Thread(compra, "Compra");
-        hCompra.setPriority(Thread.NORM_PRIORITY);
+
         hCompra.start();
 
         try {
