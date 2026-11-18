@@ -12,9 +12,16 @@ public class Panel {
 	
 	public Panel(int retraso) {
 		this.retraso = retraso;
-		this.salida = hora(retraso);
+		this.salida = hora(PREVISTA + retraso);
 	}
 
+	public void setSalida(int nRetraso) {
+		this.salida = hora(PREVISTA + nRetraso);
+	}
+	
+	public String getSalida() {
+		return salida;
+	}
 
 	public int getRetraso() {
 		return retraso;
